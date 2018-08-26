@@ -108,7 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2a9fb9d4a9d684681a6a0b66f5d84f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
   rocketTurnSpeed: 200
   rocketSpeed: 20
   randomOffset: 0
