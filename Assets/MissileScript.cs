@@ -84,7 +84,15 @@ public class MissileScript : MonoBehaviour
         {
             Destroy(transform.gameObject, 1);
         }
-        
-        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Enemy3")
+        {
+            Destroy(collision.gameObject);
+            //transform.gameObject.
+            Destroy(transform.gameObject);
+        }
     }
 }

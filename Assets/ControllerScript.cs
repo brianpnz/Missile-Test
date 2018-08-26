@@ -25,9 +25,9 @@ public class ControllerScript : MonoBehaviour {
 
         Debug.Log(enemyInstance.name + " was selected");
 
-        for (int i = 0; i < 6; i++)
+       for (int i = 0; i < 1; i++)
         {
-            Instantiate(prefab, new Vector3(i * 0.5F, 0, 0), Quaternion.identity);
+            Instantiate(prefab, new Vector3(0.5F, 0, 0), Quaternion.identity);
         }
         
     }
