@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Missile : MonoBehaviour
+public class MissileScript : MonoBehaviour
 {
 
     private GameObject enemy;
     private Transform target;
     private ControllerScript controller;
-
+    
     public float rocketTurnSpeed = 15.0f;
     public float rocketSpeed = 15.0f;
     public float randomOffset = 5.0f;
@@ -28,7 +28,6 @@ public class Missile : MonoBehaviour
         //rocketTurnSpeed = 5.0f;
         //rocketSpeed = 15.0f;
         //randomOffset = 0.0f;
-
         timerSinceLaunch_Contor = 0;
         objectLifeTimerValue = 20;
 
@@ -41,9 +40,17 @@ public class Missile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemy = controller.GetSelectedEnemy().gameObject;
+        //Check if the missile doesn't already have a target enemy
+        if (!enemy)
+        {
+            //Check to see if one has been clicked on
+            if (controller.GetSelectedEnemy())
+            {
+                enemy = controller.GetSelectedEnemy().gameObject;
+                target = enemy.gameObject.transform;
+            }
+        }
 
-        target = enemy.gameObject.transform;
 
         timerSinceLaunch_Contor += Time.deltaTime;
 
@@ -53,7 +60,7 @@ public class Missile : MonoBehaviour
             {
                 if ((target.position - transform.position).magnitude > 50)
                 {
-                    randomOffset = 100.0f;
+                    randomOffset = 10.0f;
                     rocketTurnSpeed = 90.0f;
                 }
                 else
@@ -77,5 +84,7 @@ public class Missile : MonoBehaviour
         {
             Destroy(transform.gameObject, 1);
         }
+        
+        
     }
 }
