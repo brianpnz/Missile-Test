@@ -90,7 +90,8 @@ public class MissileScript : MonoBehaviour
     {
         if(collision.gameObject.name == "Enemy3")
         {
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<EnemyScript>().Hit();
             //transform.gameObject.
             Destroy(transform.gameObject);
         }

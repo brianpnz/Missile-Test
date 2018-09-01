@@ -25,4 +25,9 @@ public class EnemyScript : MonoBehaviour {
     {
         controller.UpdateSelectedEnemy(this);
     }
+
+    public void Hit()
+    {
+        transform.Rotate(0f, 1f, 0f);
+    }
 }
