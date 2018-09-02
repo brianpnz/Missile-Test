@@ -88,7 +88,7 @@ public class MissileScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "Enemy3")
+        if(collision.gameObject.tag == "EnemyShip")
         {
             //Destroy(collision.gameObject);
             collision.gameObject.GetComponent<EnemyScript>().Hit();

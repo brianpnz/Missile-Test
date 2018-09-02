@@ -8,16 +8,17 @@ public class ControllerScript : MonoBehaviour {
     private string selectedEnemy;
     private EnemyScript enemyInstance;
     public Transform prefab;
+    private Transform myShip;
 
 	// Use this for initialization
 	void Start () {
-        
+        myShip = GetComponentInParent<Transform>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update() { 
+    
+    }
 
     public void UpdateSelectedEnemy(EnemyScript enemy)
     {
@@ -27,7 +28,7 @@ public class ControllerScript : MonoBehaviour {
 
        for (int i = 0; i < 1; i++)
         {
-            Instantiate(prefab, new Vector3(0.5F, 0, 0), Quaternion.identity);
+            Instantiate(prefab, myShip.position, myShip.rotation);
         }
         
     }
