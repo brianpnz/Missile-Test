@@ -28,9 +28,13 @@ public class EnemyScript : MonoBehaviour {
 		
 	}
 
-    void OnMouseDown()
+    void OnMouseOver()
     {
-        controller.UpdateSelectedEnemy(this);
+        if(Input.GetMouseButtonDown(1))
+        {
+            controller.UpdateSelectedEnemy(this);
+        }
+        
     }
 
     public void Hit()

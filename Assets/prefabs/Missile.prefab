@@ -125,5 +125,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketTurnSpeed: 50
-  rocketSpeed: 8
+  rocketSpeed: 30
   randomOffset: 0
